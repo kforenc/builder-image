@@ -1,0 +1,20 @@
+name: Housekeeping
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      NUMBER: ${{ github.run_number }}
+    steps:
+      - name: Create file
+        run: |
+          cat "Costam-costam" > pliczek.txt
+          mkdir -p result/upload
+          cp pliczek.txt result/upload/pliczek-latest.txt
+          cp pliczek.txt result/upload/pliczek-$NUMBER.txt
