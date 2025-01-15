@@ -15,7 +15,7 @@ jobs:
       - name: Create file
         run: |
           echo "Costam-costam: " > pliczek.txt
-          cat $NUMBER >> pliczek.txt
+          echo $NUMBER >> pliczek.txt
           mkdir -p result/upload
           cp pliczek.txt result/upload/pliczek-latest.txt
           cp pliczek.txt result/upload/pliczek-$NUMBER.txt
