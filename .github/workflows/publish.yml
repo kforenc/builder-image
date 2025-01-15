@@ -14,7 +14,10 @@ jobs:
     steps:
       - name: Create file
         run: |
-          cat "Costam-costam" > pliczek.txt
+          echo "Costam-costam: " > pliczek.txt
+          cat $NUMBER >> pliczek.txt
           mkdir -p result/upload
           cp pliczek.txt result/upload/pliczek-latest.txt
           cp pliczek.txt result/upload/pliczek-$NUMBER.txt
+          cat result/upload/pliczek-latest.txt
+          ls result/upload
